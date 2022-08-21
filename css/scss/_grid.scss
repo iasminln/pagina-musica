@@ -1,0 +1,47 @@
+.estrutura {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) 4fr 320px;
+  grid-template-areas:
+    "header header header"
+    "sidebar content anuncios"
+    "footer footer footer";
+
+  @include mq(1200) {
+    grid-template-columns: minmax(250px, 1fr) 4fr;
+    grid-template-areas:
+      "header header"
+      "sidebar content"
+      "sidebar anuncios"
+      "footer footer";
+  }
+
+  @include mq(800) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content"
+      "anuncios"
+      "footer";
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .anuncios {
+    grid-area: anuncios;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+}

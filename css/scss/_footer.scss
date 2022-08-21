@@ -1,0 +1,12 @@
+.footer {
+  height: 120px;
+  padding: 30px;
+  background: $cor-destaque-principal;
+  display: grid;
+  align-items: flex-end;
+
+  p {
+    font-size: font(20);
+    color: $cor-font-escura;
+  }
+}

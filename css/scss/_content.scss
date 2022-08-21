@@ -1,0 +1,17 @@
+.content {
+  background: $cor-principal;
+  padding: 40px 30px;
+
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-size: font(40);
+    color: $cor-font-clara-secundaria;
+    margin-bottom: 30px;
+  }
+
+  p {
+    color: $cor-font-clara;
+    font-size: font(16);
+    line-height: 2;
+  }
+}

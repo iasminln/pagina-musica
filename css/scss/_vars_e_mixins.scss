@@ -1,0 +1,26 @@
+// Cores background
+
+$cor-principal: #2c3639;
+$cor-secundaria: #3f4e4f;
+$cor-destaque-principal: #a27b5c;
+$cor-destaque-secundaria: #dcd7c9;
+
+// Cores fontes
+
+$cor-font-clara: #dcd7c9;
+$cor-font-clara-secundaria: #a27b5c;
+$cor-font-escura: #2c3639;
+
+// Media query
+
+@mixin mq($width, $type: max) {
+  @media (#{$type}-width: ($width + px)) {
+    @content;
+  }
+}
+
+// Fonte em rem
+
+@function font($size) {
+  @return $size / 16 + rem;
+}

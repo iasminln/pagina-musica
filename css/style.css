@@ -1,0 +1,290 @@
+/* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 7, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/* line 11, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+li {
+  list-style: none;
+}
+
+/* line 15, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* line 20, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+.estrutura {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) 4fr 320px;
+  grid-template-areas: "header header header" "sidebar content anuncios" "footer footer footer";
+}
+
+@media (max-width: 1200px) {
+  /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+  .estrutura {
+    grid-template-columns: minmax(250px, 1fr) 4fr;
+    grid-template-areas: "header header" "sidebar content" "sidebar anuncios" "footer footer";
+  }
+}
+
+@media (max-width: 800px) {
+  /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+  .estrutura {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "sidebar" "content" "anuncios" "footer";
+  }
+}
+
+/* line 28, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+.estrutura .header {
+  grid-area: header;
+}
+
+/* line 32, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+.estrutura .sidebar {
+  grid-area: sidebar;
+}
+
+/* line 36, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+.estrutura .content {
+  grid-area: content;
+}
+
+/* line 40, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+.estrutura .anuncios {
+  grid-area: anuncios;
+}
+
+/* line 44, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
+.estrutura .footer {
+  grid-area: footer;
+}
+
+/* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+.header {
+  background: #a27b5c;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* line 9, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+.header h1 {
+  color: #2c3639;
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-right: 30px;
+}
+
+@media (max-width: 800px) {
+  /* line 9, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+  .header h1 {
+    margin-bottom: 20px;
+  }
+}
+
+/* line 22, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+.header ul {
+  display: flex;
+}
+
+/* line 25, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+.header ul a {
+  display: inline-block;
+  color: #dcd7c9;
+  font-size: 0.9375rem;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background: #2c3639;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* line 35, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+.header ul a:hover {
+  background: #3f4e4f;
+}
+
+/* line 40, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+.header ul li + li {
+  margin-left: 20px;
+}
+
+/* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+.sidebar {
+  background: #3f4e4f;
+  padding: 40px 30px;
+}
+
+@media (max-width: 800px) {
+  /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+  .sidebar {
+    overflow-x: scroll;
+  }
+  /* line 8, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+  .sidebar::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* line 11, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #a27b5c;
+    border: 3px solid #3f4e4f;
+  }
+  /* line 16, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+  .sidebar::-webkit-scrollbar-track {
+    background-color: #3f4e4f;
+  }
+}
+
+/* line 22, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+.sidebar ul {
+  display: grid;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  /* line 22, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+  .sidebar ul {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+/* line 31, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+.sidebar ul li + li {
+  margin-top: 30px;
+}
+
+@media (max-width: 800px) {
+  /* line 31, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+  .sidebar ul li + li {
+    margin-top: 0;
+    margin-left: 30px;
+  }
+}
+
+/* line 41, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+.sidebar ul li img {
+  padding: 20px;
+  background: #a27b5c;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+@media (max-width: 800px) {
+  /* line 41, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+  .sidebar ul li img {
+    min-width: 150px;
+  }
+}
+
+/* line 51, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_sidebar.scss */
+.sidebar ul li img:hover {
+  background: #dcd7c9;
+}
+
+/* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_content.scss */
+.content {
+  background: #2c3639;
+  padding: 40px 30px;
+}
+
+/* line 5, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_content.scss */
+.content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #a27b5c;
+  margin-bottom: 30px;
+}
+
+/* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_content.scss */
+.content p {
+  color: #dcd7c9;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+/* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+.anuncios {
+  background: #3f4e4f;
+  padding: 40px 30px;
+}
+
+/* line 5, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+.anuncios h2 {
+  color: #dcd7c9;
+  font-size: 1.5625rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 30px;
+}
+
+/* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+.anuncios img {
+  padding: 10px;
+  background: #a27b5c;
+  border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+  /* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+  .anuncios img {
+    min-width: 200px;
+    flex: 1 1 200px;
+  }
+}
+
+/* line 23, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+.anuncios a + a {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+@media (max-width: 1200px) {
+  /* line 23, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+  .anuncios a + a {
+    margin-top: 0;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* line 33, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+  .anuncios .images-anuncios {
+    display: flex;
+  }
+}
+
+/* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_footer.scss */
+.footer {
+  height: 120px;
+  padding: 30px;
+  background: #a27b5c;
+  display: grid;
+  align-items: flex-end;
+}
+
+/* line 8, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_footer.scss */
+.footer p {
+  font-size: 1.25rem;
+  color: #2c3639;
+}
+
+/*# sourceMappingURL=style.css.map */
