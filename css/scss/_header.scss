@@ -12,7 +12,7 @@
     font-family: "Playfair Display", serif;
     font-weight: 700;
     line-height: 1.2;
-    margin:0 30px;
+    margin: 0 30px;
 
     @include mq(800) {
       margin-bottom: 20px;
@@ -28,6 +28,8 @@
       display: inline-block;
       color: $cor-font-clara;
       font-size: font(15);
+      font-weight: 600;
+      letter-spacing: 0.5px;
       padding: 10px 20px;
       margin: 10px 0;
       background: $cor-principal;
@@ -42,5 +44,54 @@
     li + li {
       margin-left: 20px;
     }
+  }
+
+  //****** submenu
+
+  [data-menu] {
+    position: relative;
+
+    ul {
+      display: none;
+
+       &.ativo {
+        display: block;
+        position: absolute;
+        background: $cor-destaque-secundaria;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $cor-principal;
+        margin: 0;
+        top: 47px;
+
+        &::before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-bottom: 10px solid $cor-destaque-secundaria;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          position: absolute;
+          top: -8px;
+        }
+
+        li {
+          margin: 0;
+        }
+
+        a {
+          background: transparent;
+          margin: 0;
+          padding: 10px;
+          color: $cor-principal;
+
+          &:hover {
+            color: $cor-destaque-principal;
+          }
+        }
+      }
+    }
+
+   
   }
 }
