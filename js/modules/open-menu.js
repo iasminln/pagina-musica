@@ -1,19 +1,30 @@
-export default function OpenMenu (){
+export default function OpenMenu() {
+  const itemMenu = document.querySelector("[data-menu]");
+  const htmlGeral = document.documentElement;
 
-  const itemMenu = document.querySelector("[data-menu]")
-  const subMenu = document.querySelector("[data-menu] ul")
+
+
+  function handleClick  (e)  {
+    e.preventDefault();
+    itemMenu.classList.add("ativo");
+
+    ["touchstart", "mouseover"].forEach((itemEvent) => {
+      htmlGeral.addEventListener(itemEvent, ()=>{
+        console.log(htmlGeral.contains(this))
+      });
+
+      // function htmlClick (element)  {
+   
+      //     console.log(element);
+        
+       
+      // };
+    });
+  };
+
   
-  const colocarMouse = () =>{
-    subMenu.classList.add("ativo")
 
-  }
-
-  const tirarMouse = () =>{
-    subMenu.classList.remove("ativo")
-  }
-
-  itemMenu.addEventListener("mousemove", ()=>{
-    colocarMouse()
-  })
-
+  ["touchstart", "mouseover"].forEach((itemEvent) => {
+    itemMenu.addEventListener(itemEvent, handleClick);
+  });
 }
