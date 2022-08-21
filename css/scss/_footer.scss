@@ -1,6 +1,6 @@
 .footer {
   height: 120px;
-  padding: 30px;
+  padding: 30px calc((100% - 1500px) / 2);
   background: $cor-destaque-principal;
   display: grid;
   align-items: flex-end;
@@ -8,5 +8,6 @@
   p {
     font-size: font(20);
     color: $cor-font-escura;
+    margin-left: 30px;
   }
 }

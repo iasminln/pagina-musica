@@ -8,20 +8,21 @@
 /* line 7, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
 body {
   font-family: Helvetica, sans-serif;
+  background: #3f4e4f;
 }
 
-/* line 11, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+/* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
 li {
   list-style: none;
 }
 
-/* line 15, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+/* line 16, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
 img {
   max-width: 100%;
   display: block;
 }
 
-/* line 20, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
+/* line 21, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_reset.scss */
 a {
   text-decoration: none;
 }
@@ -29,22 +30,22 @@ a {
 /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
 .estrutura {
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) 4fr 320px;
-  grid-template-areas: "header header header" "sidebar content anuncios" "footer footer footer";
+  grid-template-columns: 1fr 250px minmax(650px, 950px) 300px 1fr;
+  grid-template-areas: "header header header header header" ". sidebar content anuncios ." "footer footer footer footer footer";
 }
 
 @media (max-width: 1200px) {
   /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
   .estrutura {
-    grid-template-columns: minmax(250px, 1fr) 4fr;
-    grid-template-areas: "header header" "sidebar content" "sidebar anuncios" "footer footer";
+    grid-template-columns: 250px 1fr 300px;
+    grid-template-areas: "header header header" "sidebar content content" "sidebar anuncios anuncios" "footer footer footer";
   }
 }
 
 @media (max-width: 800px) {
   /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_grid.scss */
   .estrutura {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-areas: "header" "sidebar" "content" "anuncios" "footer";
   }
 }
@@ -77,7 +78,7 @@ a {
 /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
 .header {
   background: #a27b5c;
-  padding: 30px;
+  padding: 30px calc((100% - 1500px) / 2);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,7 +92,7 @@ a {
   font-family: "Playfair Display", serif;
   font-weight: 700;
   line-height: 1.2;
-  margin-right: 30px;
+  margin: 0 30px;
 }
 
 @media (max-width: 800px) {
@@ -104,9 +105,11 @@ a {
 /* line 22, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
 .header ul {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0 30px;
 }
 
-/* line 25, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+/* line 27, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
 .header ul a {
   display: inline-block;
   color: #dcd7c9;
@@ -118,12 +121,12 @@ a {
   transition: 0.3s;
 }
 
-/* line 35, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+/* line 37, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
 .header ul a:hover {
   background: #3f4e4f;
 }
 
-/* line 40, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
+/* line 42, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_header.scss */
 .header ul li + li {
   margin-left: 20px;
 }
@@ -236,46 +239,58 @@ a {
   margin-bottom: 30px;
 }
 
-/* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
-.anuncios img {
+@media (max-width: 1200px) {
+  /* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+  .anuncios .images-anuncios {
+    display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  /* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+  .anuncios .images-anuncios {
+    flex-direction: column;
+  }
+}
+
+/* line 21, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+.anuncios .images-anuncios img {
   padding: 10px;
   background: #a27b5c;
   border-radius: 5px;
 }
 
-@media (max-width: 1200px) {
-  /* line 12, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
-  .anuncios img {
-    min-width: 200px;
-    flex: 1 1 200px;
-  }
+/* line 27, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+.anuncios .images-anuncios a {
+  display: inline-block;
+  max-width: 300px;
 }
 
-/* line 23, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
-.anuncios a + a {
-  display: inline-block;
+/* line 32, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+.anuncios .images-anuncios a + a {
   margin-top: 30px;
 }
 
 @media (max-width: 1200px) {
-  /* line 23, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
-  .anuncios a + a {
+  /* line 32, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+  .anuncios .images-anuncios a + a {
     margin-top: 0;
     margin-left: 30px;
   }
 }
 
-@media (max-width: 1200px) {
-  /* line 33, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
-  .anuncios .images-anuncios {
-    display: flex;
+@media (max-width: 500px) {
+  /* line 32, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_anuncios.scss */
+  .anuncios .images-anuncios a + a {
+    margin-left: 0;
+    margin-top: 30px;
   }
 }
 
 /* line 1, ../../../../../Iasmin/projetos-estudos/pagina-musica/css/scss/_footer.scss */
 .footer {
   height: 120px;
-  padding: 30px;
+  padding: 30px calc((100% - 1500px) / 2);
   background: #a27b5c;
   display: grid;
   align-items: flex-end;
@@ -285,6 +300,7 @@ a {
 .footer p {
   font-size: 1.25rem;
   color: #2c3639;
+  margin-left: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
