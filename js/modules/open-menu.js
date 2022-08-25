@@ -1,30 +1,33 @@
 export default function OpenMenu() {
   const itemMenu = document.querySelector("[data-menu]");
   const htmlGeral = document.documentElement;
+  const eventos = ["touchstart", "mouseover"];
 
-
-
-  function handleClick  (e)  {
+  function handleClick(e) {
     e.preventDefault();
-    itemMenu.classList.add("ativo");
+    this.classList.add("ativo");
 
-    ["touchstart", "mouseover"].forEach((itemEvent) => {
-      htmlGeral.addEventListener(itemEvent, ()=>{
-        console.log(htmlGeral.contains(this))
-      });
-
-      // function htmlClick (element)  {
-   
-      //     console.log(element);
-        
-       
-      // };
+    fecharMenu(this, () => {
+      this.classList.remove("ativo");
     });
-  };
+  }
 
-  
+  function fecharMenu(el, callback) {
+    eventos.forEach((item) => {
+      htmlGeral.addEventListener(item, clickHtml);
+    });
 
-  ["touchstart", "mouseover"].forEach((itemEvent) => {
-    itemMenu.addEventListener(itemEvent, handleClick);
+    function clickHtml(e) {
+      if (!el.contains(e.target)) {
+        eventos.forEach((item) => {
+          htmlGeral.removeEventListener(item, clickHtml);
+        });
+        callback();
+      }
+    }
+  }
+
+  eventos.forEach((item) => {
+    itemMenu.addEventListener(item, handleClick);
   });
 }
